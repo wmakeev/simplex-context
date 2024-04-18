@@ -43,7 +43,7 @@
   "author": "Vitaliy V. Makeev",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wmakeev/siplex-context"
+    "url": "https://github.com/wmakeev/simplex-context"
   },
   "license": "ISC",
   "devDependencies": {
