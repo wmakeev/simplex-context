@@ -9,6 +9,8 @@ const expressionDefaultConstants = {
 }
 
 export const expressionContext: TransformExpressionContext = {
-  constants: expressionDefaultConstants,
-  functions: functions
+  symbols: {
+    ...expressionDefaultConstants,
+    ...functions
+  }
 }

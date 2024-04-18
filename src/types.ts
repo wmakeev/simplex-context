@@ -1,11 +1,5 @@
 export interface TransformExpressionContext {
-  functions?:
-    | {
-        [k: string]: (...args: any[]) => any
-      }
-    | undefined
-
-  constants?:
+  symbols?:
     | {
         [T: string]: any
       }
