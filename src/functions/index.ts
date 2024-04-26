@@ -25,6 +25,8 @@ const functionsByName: Record<string, (...args: any[]) => any> = {
   'Arr:At': arr.at,
   'Arr:Reverse': arr.reverse,
   'Arr:Join': arr.join,
+  'Arr:Sort': arr.sort,
+  'Arr:Uniq': arr.uniq,
   //#endregion
 
   //#region Str

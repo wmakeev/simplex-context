@@ -36,7 +36,16 @@ test('case #1', async () => {
 
       transforms.column.rename({
         oldColumnName: 'G',
-        newColumnName: 'Цена'
+        newColumnName: 'Цена N'
+      }),
+
+      transforms.column.rename({
+        oldColumnName: 'K',
+        newColumnName: 'Цена N'
+      }),
+
+      transforms.column.add({
+        columnName: 'Цена'
       }),
 
       transforms.column.transform(
@@ -62,9 +71,23 @@ test('case #1', async () => {
 
       transforms.column.transform(
         {
+          columnName: 'Цена N',
+          expression: `
+            value() | Num:TryParseFloat(_, 0) | Num:Round(_, 2)
+          `
+        },
+        expressionContext
+      ),
+
+      transforms.column.transform(
+        {
           columnName: 'Цена',
           expression: `
-            value() | Num:TryParseFloat(_, 0) | Num:ToFixed(_, 2)
+            (
+              (
+                values("Цена N") | Arr:Uniq | Arr:Filter(_, NotEqual(_, 0)) | Arr:Sort | Arr:At(_, 0)
+              ) ?? 0
+            ) | Num:ToFixed(_, 2)
           `
         },
         expressionContext
@@ -124,7 +147,7 @@ test('case #1', async () => {
       'Кофе Boggi Dolce 250гр*20шт  вак.уп. молот. (П-121,Р-)',
       '2024.09.24',
       '8003012010687',
-      '271.70'
+      '289.03'
     ],
     [
       'Кофе Boggi Espresso 250гр*20шт  вак.уп.молот. (П-121,Р-)',
@@ -136,7 +159,7 @@ test('case #1', async () => {
       "ДАЛМАЕР 1000гр/8шт зерно Crema d'Oro (П-24,Р-8)",
       '2024.12.29',
       '4008167152729',
-      '1425.00'
+      '1515.92'
     ],
     [
       "ДАЛМАЕР 1000гр/8шт зерно Crema d'Oro Selektion (П-24,Р-8)",
