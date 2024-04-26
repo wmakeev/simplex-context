@@ -1,2 +1,3 @@
-export * from './curryWrapper.test.js'
-export * from './index.test.js'
+import './curryWrapper.test.js'
+import './index.test.js'
+import './num/index.js'
