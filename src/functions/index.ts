@@ -8,6 +8,7 @@ import * as num from './num/index.js'
 import * as str from './str/index.js'
 import * as table from './table/index.js'
 import * as tools from './tools/index.js'
+import * as state from './state/index.js'
 
 const functionsByName: Record<string, (...args: any[]) => any> = {
   //#region Common
@@ -71,7 +72,12 @@ const functionsByName: Record<string, (...args: any[]) => any> = {
   //#endregion
 
   //#region Barcode
-  'Barcode:IsGTIN': barcode.isGTIN
+  'Barcode:IsGTIN': barcode.isGTIN,
+  //#endregion
+
+  //#region State
+  'State:Set:Add': state.set.add,
+  'State:Set:Has': state.set.has
   //#endregion
 }
 
