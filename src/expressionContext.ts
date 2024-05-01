@@ -1,6 +1,9 @@
 import { CURRY_PLACEHOLDER } from './functions/curryWrapper.js'
-import { functions } from './functions/index.js'
-import { TransformExpressionContext } from './types.js'
+import { getFunctions } from './functions/index.js'
+import {
+  TransformExpressionContext,
+  TransformExpressionState
+} from './types.js'
 
 const expressionDefaultConstants = {
   _: CURRY_PLACEHOLDER,
@@ -8,9 +11,19 @@ const expressionDefaultConstants = {
   FALSE: false
 }
 
-export const expressionContext: TransformExpressionContext = {
-  symbols: {
-    ...expressionDefaultConstants,
-    ...functions
+export const EXPRESSION_STATE = Symbol('EXPRESSION_STATE')
+
+export function createExpressionContext(): TransformExpressionContext {
+  const state: TransformExpressionState = {
+    SETS_MAP: new Map<string, Set<any>>()
+  }
+
+  const functions = getFunctions(state)
+
+  return {
+    symbols: {
+      ...expressionDefaultConstants,
+      ...functions
+    }
   }
 }

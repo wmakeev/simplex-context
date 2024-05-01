@@ -14,9 +14,11 @@ import {
   compose
 } from 'node:stream'
 import test from 'node:test'
-import { expressionContext } from '../../src/index.js'
+import { createExpressionContext } from '../../src/index.js'
 
 test('case #1', async () => {
+  const expressionContext = createExpressionContext()
+
   const transformer = createTableTransformer({
     transforms: [
       transforms.column.rename({

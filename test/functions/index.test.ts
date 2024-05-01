@@ -11,9 +11,11 @@ import {
   compose
 } from 'node:stream'
 import test from 'node:test'
-import { expressionContext } from '../../src/index.js'
+import { createExpressionContext } from '../../src/index.js'
 
 test('num', async () => {
+  const expressionContext = createExpressionContext()
+
   const srcData = [
     ['value', 'result'],
     ['1', ''],
@@ -59,6 +61,8 @@ test('num', async () => {
 })
 
 test('curried functions', async () => {
+  const expressionContext = createExpressionContext()
+
   const srcData = [
     ['case', 'val'],
     ['1', '']
@@ -103,6 +107,8 @@ test('curried functions', async () => {
 })
 
 test('barcode', async () => {
+  const expressionContext = createExpressionContext()
+
   const srcData = [
     ['value', 'result'],
     ['4850001392774', ''],
@@ -156,6 +162,8 @@ test('barcode', async () => {
 })
 
 test('tools', async () => {
+  const expressionContext = createExpressionContext()
+
   const srcData = [
     ['value', 'result'],
     ['48 5 00013 92774', ''],
