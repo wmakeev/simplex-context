@@ -1,5 +1,9 @@
-const tablesLookupCache = new WeakMap<unknown[][], Map<unknown, unknown>>()
+const tablesLookupCache = new WeakMap<
+  unknown[][],
+  Map<unknown, Map<unknown, unknown>>
+>()
 
+// FIXME Кеш работает некорректно (кеширует только первый индекс)
 const createTableLookupCache = (
   table: unknown[][],
   colNum: number | string
@@ -19,7 +23,7 @@ const createTableLookupCache = (
   }
 
   if (table[0] && table[0].length < colNum_) {
-    throw new Error(`vlookup: index ${colNum_} is out of range`)
+    throw new Error(`index ${colNum_} is out of range`)
   }
 
   return table.reduce((res, row) => {
@@ -39,19 +43,26 @@ export function vlookup(
   index: number | string
 ) {
   if (table == null) {
-    throw new Error('vlookup: table argument not defined')
+    throw new Error('table argument not defined')
   }
 
   if (!Array.isArray(table)) {
-    throw new Error('vlookup: table argument should to be array')
+    throw new Error('table argument should to be array')
   }
 
-  let tableLookupCache = tablesLookupCache.get(table)
+  let tableLookupCacheByIndexMap = tablesLookupCache.get(table)
 
-  if (tableLookupCache === undefined) {
-    tableLookupCache = createTableLookupCache(table, index)
-    tablesLookupCache.set(table, tableLookupCache)
+  if (tableLookupCacheByIndexMap === undefined) {
+    tableLookupCacheByIndexMap = new Map()
+    tablesLookupCache.set(table, tableLookupCacheByIndexMap)
   }
 
-  return tableLookupCache.get(searchKey)
+  let tableLookupCacheMap = tableLookupCacheByIndexMap.get(index)
+
+  if (tableLookupCacheMap === undefined) {
+    tableLookupCacheMap = createTableLookupCache(table, index)
+    tableLookupCacheByIndexMap.set(index, tableLookupCacheMap)
+  }
+
+  return tableLookupCacheMap.get(searchKey)
 }
