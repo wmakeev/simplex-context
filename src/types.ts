@@ -8,4 +8,5 @@ export interface TransformExpressionContext {
 
 export interface TransformExpressionState {
   SETS_MAP: Map<string, Set<any>>
+  MAPS_MAP: Map<string, Map<any, any>>
 }

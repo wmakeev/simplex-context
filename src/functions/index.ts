@@ -22,6 +22,8 @@ const functionsByName: Record<
   //#region Common
   'TypeOf': [common.typeOf, {}],
   'NotEqual': [common.notEqual, {}],
+  'Fn:Pipe': [common.pipe, {}],
+  /** @deprecated use Fn:Pipe */
   'Pipe': [common.pipe, {}],
   //#endregion
 
@@ -85,7 +87,9 @@ const functionsByName: Record<
 
   //#region State
   'State:Set:Add': [state.set.add, { useState: true }],
-  'State:Set:Has': [state.set.has, { useState: true }]
+  'State:Set:Has': [state.set.has, { useState: true }],
+  'State:Map:Set': [state.map.set, { useState: true }],
+  'State:Map:Get': [state.map.get, { useState: true }]
   //#endregion
 }
 

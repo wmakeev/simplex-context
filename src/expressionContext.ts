@@ -15,7 +15,8 @@ export const EXPRESSION_STATE = Symbol('EXPRESSION_STATE')
 
 export function createExpressionContext(): TransformExpressionContext {
   const state: TransformExpressionState = {
-    SETS_MAP: new Map<string, Set<any>>()
+    SETS_MAP: new Map(),
+    MAPS_MAP: new Map()
   }
 
   const functions = getFunctions(state)
