@@ -1,5 +1,6 @@
 import './curryWrapper.test.js'
 import './index.test.js'
 import './num/index.js'
+import './regex/index.test.js'
 import './state/index.js'
 import './table/index.js'

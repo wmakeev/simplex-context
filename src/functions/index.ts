@@ -10,6 +10,7 @@ import * as state from './state/index.js'
 import * as str from './str/index.js'
 import * as table from './table/index.js'
 import * as tools from './tools/index.js'
+import * as regex from './regex/index.js'
 
 interface FunctionConfig {
   useState?: boolean
@@ -33,6 +34,7 @@ const functionsByName: Record<
 
   //#region Arr
   'Arr:Filter': [arr.filter, {}],
+  'Arr:Map': [arr.map, {}],
   'Arr:At': [arr.at, {}],
   'Arr:Reverse': [arr.reverse, {}],
   'Arr:Join': [arr.join, {}],
@@ -89,7 +91,13 @@ const functionsByName: Record<
   'State:Set:Add': [state.set.add, { useState: true }],
   'State:Set:Has': [state.set.has, { useState: true }],
   'State:Map:Set': [state.map.set, { useState: true }],
-  'State:Map:Get': [state.map.get, { useState: true }]
+  'State:Map:Get': [state.map.get, { useState: true }],
+  //#endregion
+
+  //#region RegEx
+  'RegExp:Match': [regex.match, {}],
+  'RegExp:MatchAll': [regex.matchAll, {}],
+  'RegExp:Test': [regex.test, {}]
   //#endregion
 }
 
