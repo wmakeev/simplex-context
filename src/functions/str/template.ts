@@ -8,5 +8,9 @@ export function template(templ: unknown, ...values: any[]) {
     throw new TypeError(`template argument should to be string`)
   }
 
+  if (values.length === 1 && Array.isArray(values[0])) {
+    return pupa(templ as string, values[0])
+  }
+
   return pupa(templ as string, values)
 }

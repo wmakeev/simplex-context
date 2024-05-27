@@ -1,5 +1,6 @@
 export * from './countLeftTabs.js'
 export * from './extractNums.js'
+export * from './length.js'
 export * from './replaceAll.js'
 export * from './split.js'
 export * from './startsWith.js'

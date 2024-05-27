@@ -49,6 +49,7 @@ const functionsByName: Record<
   'Str:ToLowerCase': [str.toLowerCase, {}],
   'Str:Trim': [str.trim, {}],
   'Str:Template': [str.template, {}],
+  'Str:Length': [str.length, {}],
 
   'Str:ExtractNums': [str.extractNums, {}],
   'Str:CountLeftTabs': [str.countLeftTabs, {}],
