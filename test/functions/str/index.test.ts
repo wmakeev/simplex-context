@@ -21,3 +21,11 @@ test('str.length', () => {
   assert.equal(str.length('123'), 3)
   assert.equal(str.length(123), 3)
 })
+
+test('str.includes', () => {
+  assert.throws(() => str.includes('', undefined))
+  assert.throws(() => str.includes(null, ''))
+
+  assert.equal(str.includes('abcd', 'bc'), true)
+  assert.equal(str.includes('abcd', 'ef'), false)
+})

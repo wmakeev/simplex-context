@@ -44,16 +44,16 @@ const functionsByName: Record<
   //#endregion
 
   //#region Str
+  'Str:countLeftTabs': [str.countLeftTabs, {}],
+  'Str:extractNums': [str.extractNums, {}],
+  'Str:includes': [str.includes, {}],
+  'Str:length': [str.length, {}],
   'Str:replaceAll': [str.replaceAll, {}],
   'Str:split': [str.split, {}],
   'Str:startsWith': [str.startsWith, {}],
+  'Str:template': [str.template, {}],
   'Str:toLowerCase': [str.toLowerCase, {}],
   'Str:trim': [str.trim, {}],
-  'Str:template': [str.template, {}],
-  'Str:length': [str.length, {}],
-
-  'Str:extractNums': [str.extractNums, {}],
-  'Str:countLeftTabs': [str.countLeftTabs, {}],
   //#endregion
 
   //#region Num
