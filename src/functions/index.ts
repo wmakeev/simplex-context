@@ -33,11 +33,12 @@ const functionsByName: Record<
   //#endregion
 
   //#region Arr
-  'Arr:filter': [arr.filter, {}],
-  'Arr:map': [arr.map, {}],
   'Arr:at': [arr.at, {}],
-  'Arr:reverse': [arr.reverse, {}],
+  'Arr:coalesce': [arr.coalesce, {}],
+  'Arr:filter': [arr.filter, {}],
   'Arr:join': [arr.join, {}],
+  'Arr:map': [arr.map, {}],
+  'Arr:reverse': [arr.reverse, {}],
   'Arr:sort': [arr.sort, {}],
   'Arr:uniq': [arr.uniq, {}],
   //#endregion
