@@ -32,7 +32,7 @@ test('num', async () => {
         {
           columnName: 'result',
           expression: `
-            Num:TryParseFloat('value')
+            Num:tryParseFloat('value')
           `
         },
         expressionContext
@@ -76,9 +76,9 @@ test('curried functions', async () => {
           expression: `
             if 'case' == "1" then
               (3, 0, "1", 6, 0, "foo", 8, 2)
-                | Arr:Filter(_, NotEqual(_, 0))
-                | Arr:Filter(_, Pipe(TypeOf(_), NotEqual(_, "string")))
-                | Math:Min
+                | Arr:filter(_, notEqual(_, 0))
+                | Arr:filter(_, pipe(typeOf(_), notEqual(_, "string")))
+                | Math:min
             else
               value()
           `
@@ -129,7 +129,7 @@ test('barcode', async () => {
         {
           columnName: 'result',
           expression: `
-            Barcode:IsGTIN('value')
+            Barcode:isGTIN('value')
           `
         },
         expressionContext
@@ -180,7 +180,7 @@ test('tools', async () => {
         {
           columnName: 'result',
           expression: `
-            Str:ExtractNums('value')
+            Str:extractNums('value')
           `
         },
         expressionContext

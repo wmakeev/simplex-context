@@ -58,7 +58,7 @@ test('state.map', async () => {
         {
           columnName: 'set1',
           expression: `
-            State:Map:Set("test1", 'key', 'val')
+            State:Map:set("test1", 'key', 'val')
           `
         },
         expressionContext
@@ -72,7 +72,7 @@ test('state.map', async () => {
         {
           columnName: 'get1',
           expression: `
-            State:Map:Get("test1", 'key')
+            State:Map:get("test1", 'key')
           `
         },
         expressionContext

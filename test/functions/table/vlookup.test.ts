@@ -52,7 +52,7 @@ test('table.vlookup', async () => {
         {
           columnName: 'result1',
           expression: `
-            Table:VLookup('num', LOOKUP_TABLE, 1)
+            Table:vLookup('num', LOOKUP_TABLE, 1)
           `
         },
         expressionContext
@@ -66,7 +66,7 @@ test('table.vlookup', async () => {
         {
           columnName: 'result2',
           expression: `
-            Table:VLookup('num', LOOKUP_TABLE, 3)
+            Table:vLookup('num', LOOKUP_TABLE, 3)
           `
         },
         expressionContext
@@ -80,7 +80,7 @@ test('table.vlookup', async () => {
         {
           columnName: 'result3',
           expression: `
-            Table:VLookup('num', LOOKUP_TABLE, "col2")
+            Table:vLookup('num', LOOKUP_TABLE, "col2")
           `
         },
         expressionContext
@@ -94,7 +94,7 @@ test('table.vlookup', async () => {
         {
           columnName: 'result4',
           expression: `
-            Table:VLookup('num', LOOKUP_TABLE, 1)
+            Table:vLookup('num', LOOKUP_TABLE, 1)
           `
         },
         expressionContext

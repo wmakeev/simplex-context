@@ -54,7 +54,7 @@ test('state.set', async () => {
         {
           columnName: 'has',
           expression: `
-            State:Set:Has("test", 'col1')
+            State:Set:has("test", 'col1')
           `
         },
         expressionContext
@@ -68,7 +68,7 @@ test('state.set', async () => {
         {
           columnName: 'add',
           expression: `
-            State:Set:Add("test", 'col1')
+            State:Set:add("test", 'col1')
           `
         },
         expressionContext
@@ -156,7 +156,7 @@ test('state.set (deduplication)', async () => {
         {
           columnName: 'add',
           expression: `
-            State:Set:Add("test", 'col1')
+            State:Set:add("test", 'col1')
           `
         },
         expressionContext

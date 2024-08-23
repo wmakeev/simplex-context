@@ -21,84 +21,84 @@ const functionsByName: Record<
   [(...args: any[]) => any, FunctionConfig]
 > = {
   //#region Common
-  'TypeOf': [common.typeOf, {}],
-  'NotEqual': [common.notEqual, {}],
-  'Fn:Pipe': [common.pipe, {}],
-  /** @deprecated use Fn:Pipe */
-  'Pipe': [common.pipe, {}],
+  'typeOf': [common.typeOf, {}],
+  'notEqual': [common.notEqual, {}],
+  'Fn:pipe': [common.pipe, {}],
+  /** @deprecated use Fn:pipe */
+  'pipe': [common.pipe, {}],
   //#endregion
 
   //#region Table
-  'Table:VLookup': [table.vlookup, {}],
+  'Table:vLookup': [table.vlookup, {}],
   //#endregion
 
   //#region Arr
-  'Arr:Filter': [arr.filter, {}],
-  'Arr:Map': [arr.map, {}],
-  'Arr:At': [arr.at, {}],
-  'Arr:Reverse': [arr.reverse, {}],
-  'Arr:Join': [arr.join, {}],
-  'Arr:Sort': [arr.sort, {}],
-  'Arr:Uniq': [arr.uniq, {}],
+  'Arr:filter': [arr.filter, {}],
+  'Arr:map': [arr.map, {}],
+  'Arr:at': [arr.at, {}],
+  'Arr:reverse': [arr.reverse, {}],
+  'Arr:join': [arr.join, {}],
+  'Arr:sort': [arr.sort, {}],
+  'Arr:uniq': [arr.uniq, {}],
   //#endregion
 
   //#region Str
-  'Str:ReplaceAll': [str.replaceAll, {}],
-  'Str:Split': [str.split, {}],
-  'Str:StartsWith': [str.startsWith, {}],
-  'Str:ToLowerCase': [str.toLowerCase, {}],
-  'Str:Trim': [str.trim, {}],
-  'Str:Template': [str.template, {}],
-  'Str:Length': [str.length, {}],
+  'Str:replaceAll': [str.replaceAll, {}],
+  'Str:split': [str.split, {}],
+  'Str:startsWith': [str.startsWith, {}],
+  'Str:toLowerCase': [str.toLowerCase, {}],
+  'Str:trim': [str.trim, {}],
+  'Str:template': [str.template, {}],
+  'Str:length': [str.length, {}],
 
-  'Str:ExtractNums': [str.extractNums, {}],
-  'Str:CountLeftTabs': [str.countLeftTabs, {}],
+  'Str:extractNums': [str.extractNums, {}],
+  'Str:countLeftTabs': [str.countLeftTabs, {}],
   //#endregion
 
   //#region Num
-  'Num:ToFixed': [num.toFixed, {}],
+  'Num:toFixed': [num.toFixed, {}],
 
   // TODO Нужно ли разделять на Int и Float? Всё есть Number (Float)
-  'Num:ParseFloat': [num.parseFloat, {}],
-  'Num:ParseInt': [num.parseInt, {}],
+  'Num:parseFloat': [num.parseFloat, {}],
+  'Num:parseInt': [num.parseInt, {}],
 
-  'Num:TryParseFloat': [num.tryParseFloat, {}],
-  'Num:TryParseInt': [num.tryParseInt, {}],
+  'Num:tryParseFloat': [num.tryParseFloat, {}],
+  'Num:tryParseInt': [num.tryParseInt, {}],
 
-  'Num:Range': [num.range, {}],
-  'Num:Round': [num.round, {}],
+  'Num:range': [num.range, {}],
+  'Num:round': [num.round, {}],
   //#endregion
 
   //#region Math
-  'Math:Max': [math.max, {}],
-  'Math:Min': [math.min, {}],
+  'Math:max': [math.max, {}],
+  'Math:min': [math.min, {}],
   //#endregion
 
   //#region Date
-  'Date:Parse': [date.parseDate, {}],
-  'Date:TryParse': [date.tryParseDate, {}],
-  'Date:ToJson': [date.toJson, {}],
+  'Date:parse': [date.parseDate, {}],
+  'Date:tryParse': [date.tryParseDate, {}],
+  'Date:toJson': [date.toJson, {}],
   //#endregion
 
   //#region Tools
-  'Tools:RemoveExtraSpaces': [tools.removeExtraSpaces, {}],
+  'Tools:removeExtraSpaces': [tools.removeExtraSpaces, {}],
   //#endregion
 
   //#region Barcode
-  'Barcode:IsGTIN': [barcode.isGTIN, {}],
+  'Barcode:isGTIN': [barcode.isGTIN, {}],
   //#endregion
 
   //#region State
-  'State:Set:Add': [state.set.add, { useState: true }],
-  'State:Set:Has': [state.set.has, { useState: true }],
-  'State:Map:Set': [state.map.set, { useState: true }],
-  'State:Map:Get': [state.map.get, { useState: true }],
+  'State:Set:add': [state.set.add, { useState: true }],
+  'State:Set:has': [state.set.has, { useState: true }],
+  'State:Map:set': [state.map.set, { useState: true }],
+  'State:Map:get': [state.map.get, { useState: true }],
   //#endregion
 
   //#region RegEx
-  'RegExp:Match': [regex.match, {}],
-  'RegExp:MatchAll': [regex.matchAll, {}],
-  'RegExp:Test': [regex.test, {}]
+  'RegExp:match': [regex.match, {}],
+  'RegExp:matchAll': [regex.matchAll, {}],
+  'RegExp:test': [regex.test, {}]
   //#endregion
 }
 

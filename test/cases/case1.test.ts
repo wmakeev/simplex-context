@@ -55,7 +55,7 @@ test('case #1', async () => {
           columnName: 'Дата',
           expression: `
             (* Преобразуем формат даты *)
-            value() | Str:Split(_, ".") | Arr:Reverse | Arr:Join(_, ".")
+            value() | Str:split(_, ".") | Arr:reverse | Arr:join(_, ".")
           `
         },
         expressionContext
@@ -65,7 +65,7 @@ test('case #1', async () => {
         {
           columnName: 'Наименование',
           expression: `
-            value() | Str:Trim
+            value() | Str:trim
           `
         },
         expressionContext
@@ -75,7 +75,7 @@ test('case #1', async () => {
         {
           columnName: 'Цена N',
           expression: `
-            value() | Num:TryParseFloat(_, 0) | Num:Round(_, 2)
+            value() | Num:tryParseFloat(_, 0) | Num:round(_, 2)
           `
         },
         expressionContext
@@ -87,9 +87,9 @@ test('case #1', async () => {
           expression: `
             (
               (
-                values("Цена N") | Arr:Uniq | Arr:Filter(_, NotEqual(_, 0)) | Arr:Sort | Arr:At(_, 0)
+                values("Цена N") | Arr:uniq | Arr:filter(_, notEqual(_, 0)) | Arr:sort | Arr:at(_, 0)
               ) ?? 0
-            ) | Num:ToFixed(_, 2)
+            ) | Num:toFixed(_, 2)
           `
         },
         expressionContext
@@ -100,7 +100,7 @@ test('case #1', async () => {
           columnName: 'Штрихкод',
           expression: `
             (* Оставляем только корректные ШК *)
-            if Barcode:IsGTIN( value() ) then value()
+            if Barcode:isGTIN( value() ) then value()
             else ""
           `
         },
