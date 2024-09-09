@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "@wmakeev/filtrex": "^6.0.0",
+    "fecha": "^4.2.3",
     "pupa": "^3.1.0",
     "safe-regex2": "^3.1.0"
   }

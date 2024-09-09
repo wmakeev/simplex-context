@@ -29,3 +29,11 @@ test('str.includes', () => {
   assert.equal(str.includes('abcd', 'bc'), true)
   assert.equal(str.includes('abcd', 'ef'), false)
 })
+
+test('str.toUpperCase', () => {
+  assert.equal(str.toUpperCase('abcd'), 'ABCD')
+})
+
+test('str.toLowerCase', () => {
+  assert.equal(str.toLowerCase('aBcd'), 'abcd')
+})
