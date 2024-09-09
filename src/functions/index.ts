@@ -53,7 +53,7 @@ const functionsByName: Record<
   'Str:startsWith': [str.startsWith, {}],
   'Str:template': [str.template, {}],
   'Str:toLowerCase': [str.toLowerCase, {}],
-  'Str:toUpperCase': [str.toLowerCase, {}],
+  'Str:toUpperCase': [str.toUpperCase, {}],
   'Str:trim': [str.trim, {}],
   //#endregion
 
