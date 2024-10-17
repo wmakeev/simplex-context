@@ -13,6 +13,18 @@ import {
 import test from 'node:test'
 import { createExpressionContext } from '../../src/index.js'
 
+test('createExpressionContext extend', () => {
+  const expressionContext = createExpressionContext({
+    symbols: {
+      foo: 'bar'
+    }
+  })
+
+  assert.ok(expressionContext)
+  assert.equal(expressionContext.symbols?.['foo'], 'bar')
+  assert.equal(expressionContext.symbols?.['TRUE'], true)
+})
+
 test('num', async () => {
   const expressionContext = createExpressionContext()
 

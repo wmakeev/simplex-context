@@ -6,11 +6,12 @@ import { curryWrapper } from './curryWrapper.js'
 import * as date from './date/index.js'
 import * as math from './math/index.js'
 import * as num from './num/index.js'
+import * as obj from './obj/index.js'
+import * as regex from './regex/index.js'
 import * as state from './state/index.js'
 import * as str from './str/index.js'
 import * as table from './table/index.js'
 import * as tools from './tools/index.js'
-import * as regex from './regex/index.js'
 
 interface FunctionConfig {
   useState?: boolean
@@ -22,7 +23,7 @@ const functionsByName: Record<
 > = {
   //#region Common
   'typeOf': [common.typeOf, {}],
-  'notEqual': [common.notEqual, {}],
+  'notEqual': [common.notEqual, {}], // TODO Bool:not(Bool:equal(a, b))
   'Fn:pipe': [common.pipe, {}],
   /** @deprecated use Fn:pipe */
   'pipe': [common.pipe, {}],
@@ -35,6 +36,7 @@ const functionsByName: Record<
   //#region Arr
   'Arr:at': [arr.at, {}],
   'Arr:coalesce': [arr.coalesce, {}],
+  'Arr:concat': [arr.concat, {}],
   'Arr:filter': [arr.filter, {}],
   'Arr:join': [arr.join, {}],
   'Arr:map': [arr.map, {}],
@@ -74,6 +76,11 @@ const functionsByName: Record<
   //#region Math
   'Math:max': [math.max, {}],
   'Math:min': [math.min, {}],
+  //#endregion
+
+  //#region Obj
+  'Obj:get': [obj.get, {}],
+  'Obj:fromEntries': [obj.fromEntries, {}],
   //#endregion
 
   //#region Date

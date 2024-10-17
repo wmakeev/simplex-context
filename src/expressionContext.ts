@@ -13,18 +13,28 @@ const expressionDefaultConstants = {
 
 export const EXPRESSION_STATE = Symbol('EXPRESSION_STATE')
 
-export function createExpressionContext(): TransformExpressionContext {
+export const createExpressionContextState = () => {
   const state: TransformExpressionState = {
     SETS_MAP: new Map(),
     MAPS_MAP: new Map()
   }
 
+  return state
+}
+
+export function createExpressionContext(
+  extendedContext?: TransformExpressionContext
+): TransformExpressionContext {
+  const state = createExpressionContextState()
+
   const functions = getFunctions(state)
 
   return {
+    ...extendedContext,
     symbols: {
-      ...expressionDefaultConstants,
-      ...functions
+      ...functions,
+      ...extendedContext?.symbols,
+      ...expressionDefaultConstants
     }
   }
 }

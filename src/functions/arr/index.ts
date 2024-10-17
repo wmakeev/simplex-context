@@ -1,5 +1,6 @@
 export * from './at.js'
 export * from './coalesce.js'
+export * from './concat.js'
 export * from './filter.js'
 export * from './join.js'
 export * from './map.js'
