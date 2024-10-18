@@ -4,9 +4,11 @@ import * as barcode from './barcode/index.js'
 import * as common from './common/index.js'
 import { curryWrapper } from './curryWrapper.js'
 import * as date from './date/index.js'
+import * as json from './json/index.js'
 import * as math from './math/index.js'
 import * as num from './num/index.js'
 import * as obj from './obj/index.js'
+import * as op from './operations/index.js'
 import * as regex from './regex/index.js'
 import * as state from './state/index.js'
 import * as str from './str/index.js'
@@ -23,7 +25,11 @@ const functionsByName: Record<
 > = {
   //#region Common
   'typeOf': [common.typeOf, {}],
-  'notEqual': [common.notEqual, {}], // TODO Bool:not(Bool:equal(a, b))
+
+  // TODO Bool:not(Bool:equal(a, b)) // (Bool:equal(a, b) | Bool:not)
+  // Op:not // Op:eq(a, b)
+  'notEqual': [common.notEqual, {}],
+
   'Fn:pipe': [common.pipe, {}],
   /** @deprecated use Fn:pipe */
   'pipe': [common.pipe, {}],
@@ -87,6 +93,21 @@ const functionsByName: Record<
   'Date:parse': [date.parseDate, {}],
   'Date:tryParse': [date.tryParseDate, {}],
   'Date:toJson': [date.toJson, {}],
+  //#endregion
+
+  //#region Date
+  'Op:eq': [op.eq, {}],
+  'Op:gt': [op.gt, {}],
+  'Op:gte': [op.gte, {}],
+  'Op:lt': [op.lt, {}],
+  'Op:lte': [op.lte, {}],
+  'Op:neq': [op.neq, {}],
+  'Op:not': [op.not, {}],
+  //#endregion
+
+  //#region
+  'JSON:toStr': [json.toStr, {}],
+  'JSON:parse': [json.parse, {}],
   //#endregion
 
   //#region Tools
