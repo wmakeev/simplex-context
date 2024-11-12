@@ -59,6 +59,7 @@ const functionsByName: Record<
   'Str:replaceAll': [str.replaceAll, {}],
   'Str:split': [str.split, {}],
   'Str:startsWith': [str.startsWith, {}],
+  'Str:substring': [str.substring, {}],
   'Str:template': [str.template, {}],
   'Str:toLowerCase': [str.toLowerCase, {}],
   'Str:toUpperCase': [str.toUpperCase, {}],

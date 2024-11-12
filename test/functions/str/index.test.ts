@@ -1,39 +1,50 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
+import { createExpressionContextState } from '../../../src/expressionContext.js'
+import { getFunctions } from '../../../src/functions/index.js'
 
-import * as str from '../../../src/functions/str/index.js'
+const fn = getFunctions(createExpressionContextState())
 
-test('str.parseFloat', () => {
-  assert.equal(str.template('Foo {0} Bar {1}', 'foo', 'bar'), 'Foo foo Bar bar')
+test('Str:template', () => {
+  assert.equal(
+    fn['Str:template']!('Foo {0} Bar {1}', 'foo', 'bar'),
+    'Foo foo Bar bar'
+  )
 
   assert.equal(
-    str.template('Foo {0} Bar {1}', ['foo', 'bar']),
+    fn['Str:template']!('Foo {0} Bar {1}', ['foo', 'bar']),
     'Foo foo Bar bar'
   )
 })
 
-test('str.length', () => {
-  assert.throws(() => str.length(undefined))
+test('Str:length', () => {
+  assert.throws(() => fn['Str:length']!(undefined))
 
   // TODO Должна ли быть тут ошибка?
-  assert.throws(() => str.length({}))
+  assert.throws(() => fn['Str:length']!({}))
 
-  assert.equal(str.length('123'), 3)
-  assert.equal(str.length(123), 3)
+  assert.equal(fn['Str:length']!('123'), 3)
+  assert.equal(fn['Str:length']!(123), 3)
 })
 
-test('str.includes', () => {
-  assert.throws(() => str.includes('', undefined))
-  assert.throws(() => str.includes(null, ''))
+test('Str:includes', () => {
+  assert.throws(() => fn['Str:includes']!('', undefined))
+  assert.throws(() => fn['Str:includes']!(null, ''))
 
-  assert.equal(str.includes('abcd', 'bc'), true)
-  assert.equal(str.includes('abcd', 'ef'), false)
+  assert.equal(fn['Str:includes']!('abcd', 'bc'), true)
+  assert.equal(fn['Str:includes']!('abcd', 'ef'), false)
 })
 
-test('str.toUpperCase', () => {
-  assert.equal(str.toUpperCase('abcd'), 'ABCD')
+test('Str:toUpperCase', () => {
+  assert.equal(fn['Str:toUpperCase']!('abcd'), 'ABCD')
 })
 
-test('str.toLowerCase', () => {
-  assert.equal(str.toLowerCase('aBcd'), 'abcd')
+test('Str:toLowerCase', () => {
+  assert.equal(fn['Str:toLowerCase']!('aBcd'), 'abcd')
+})
+
+test('Str:substring', () => {
+  assert.equal(fn['Str:substring']!('aBcdef', 2), 'cdef')
+  assert.equal(fn['Str:substring']!('aBcdef', 2, 5), 'cde')
+  assert.equal(fn['Str:substring']!('aBcdef', 2, -1), 'aB') // ?
 })
