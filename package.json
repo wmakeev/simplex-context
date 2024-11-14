@@ -66,8 +66,8 @@
     "typescript-eslint-language-service": "^5.0.5"
   },
   "dependencies": {
-    "@wmakeev/filtrex": "^6.0.0",
-    "fecha": "^4.2.3",
+    "@wmakeev/filtrex": "^6.1.0",
+    "date-fns": "^4.1.0",
     "pupa": "^3.1.0",
     "safe-regex2": "^3.1.0"
   }

@@ -1,38 +1,29 @@
+import { parse as parseDate } from 'date-fns/parse'
 import { typeOf } from '../common/typeOf.js'
 
-export function parseDate(date: unknown): Date {
-  const dateType = typeOf(date)
+// https://date-fns.org/v4.1.0/docs/parse
 
+export function parse(date: unknown, format: unknown): Date {
   // date
-  if (dateType === 'date') {
-    return date as Date
+  if (typeof date !== 'string') {
+    throw new TypeError(
+      `date argument expected to be string but got - ${typeOf(date)}`
+    )
   }
 
-  // string
-  else if (dateType === 'string') {
-    const parsedDate = new Date(date as string)
-
-    if (Number.isNaN(parsedDate.getTime())) {
-      throw new TypeError(`Incorrect date format - "${date}"`)
-    }
-
-    return parsedDate
+  // format
+  if (typeof format !== 'string') {
+    throw new TypeError(
+      `format argument expected to be string but got - ${typeOf(format)}`
+    )
   }
 
-  // number
-  else if (dateType === 'number') {
-    return new Date(date as number)
-  }
-
-  // other
-  else {
-    throw new TypeError(`Can't convert ${dateType} to date`)
-  }
+  return parseDate(date, format, new Date(0))
 }
 
-export function tryParseDate<T>(date: unknown, defaultValue: T) {
+export function tryParse<T>(date: unknown, format: unknown, defaultValue: T) {
   try {
-    return parseDate(date)
+    return parse(date, format)
   } catch (err) {
     return defaultValue ?? null
   }

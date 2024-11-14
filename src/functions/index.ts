@@ -91,9 +91,21 @@ const functionsByName: Record<
   //#endregion
 
   //#region Date
-  'Date:parse': [date.parseDate, {}],
-  'Date:tryParse': [date.tryParseDate, {}],
+  'Date:format': [date.format, {}],
+  'Date:getDate': [date.getDate, {}],
+  'Date:getHours': [date.getHours, {}],
+  'Date:getMilliseconds': [date.getMilliseconds, {}],
+  'Date:getMinutes': [date.getMinutes, {}],
+  'Date:getMonth': [date.getMonth, {}],
+  'Date:getSeconds': [date.getSeconds, {}],
+  'Date:getTimestamp': [date.getTimestamp, {}],
+  'Date:getWeekDay': [date.getWeekDay, {}],
+  'Date:getYear': [date.getYear, {}],
+  'Date:ISO:parse': [date.parseISO, {}],
+  'Date:ISO:tryParse': [date.tryParseISO, {}],
+  'Date:parse': [date.parse, {}],
   'Date:toJson': [date.toJson, {}],
+  'Date:tryParse': [date.tryParse, {}],
   //#endregion
 
   //#region Date

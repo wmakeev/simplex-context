@@ -1,5 +1,5 @@
-import { parseDate } from './parse.js'
+import { parseISO } from './parseISO.js'
 
 export function toJson(date: unknown) {
-  return parseDate(date).toJSON()
+  return parseISO(date).toJSON()
 }
