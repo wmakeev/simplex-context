@@ -1,5 +1,7 @@
 import { typeOf } from '../common/typeOf.js'
 
+// TODO Переименовать на toString?
+
 export function toStr(obj: unknown) {
   const objType = typeOf(obj)
 

@@ -1,2 +1,3 @@
-export * from './toString.js'
+export * from './toStr.js'
+export * from './toStableStr.js'
 export * from './parse.js'

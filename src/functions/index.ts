@@ -120,6 +120,7 @@ const functionsByName: Record<
 
   //#region
   'JSON:toStr': [json.toStr, {}],
+  'JSON:toStableStr': [json.toStableStr, {}],
   'JSON:parse': [json.parse, {}],
   //#endregion
 
