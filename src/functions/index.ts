@@ -88,6 +88,7 @@ const functionsByName: Record<
   //#region Obj
   'Obj:get': [obj.get, {}],
   'Obj:fromEntries': [obj.fromEntries, {}],
+  'Obj:toPlainStableJsonRecord': [obj.toPlainStableJsonRecord, {}],
   //#endregion
 
   //#region Date

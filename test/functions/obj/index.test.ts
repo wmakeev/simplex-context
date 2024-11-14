@@ -50,3 +50,17 @@ test('Obj:get', () => {
     get({}, {})
   }, /Error in function Obj:get/)
 })
+
+test('Obj:toPlainStableJsonRecord', () => {
+  assert.equal(
+    funcs['Obj:toPlainStableJsonRecord']!({
+      b: 1,
+      a: 'foo',
+      y: {
+        z: 123,
+        m: 'bar'
+      }
+    }),
+    '{"a":"foo","b":1,"y":"{\\"m\\":\\"bar\\",\\"z\\":123}"}'
+  )
+})
