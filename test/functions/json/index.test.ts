@@ -13,7 +13,7 @@ test('JSON:toStr', () => {
   assert.equal(fn['JSON:toStr']!(true), 'true')
   assert.equal(
     fn['JSON:toStr']!(new Date(2024, 0, 1)),
-    '"2023-12-31T19:00:00.000Z"'
+    '"2024-01-01T00:00:00.000Z"'
   )
 })
 
