@@ -1,7 +1,7 @@
 import { typeOf } from '../common/typeOf.js'
 import { stringify } from 'safe-stable-stringify'
 
-export function toPlainStableJsonRecord(obj: unknown) {
+export function toPlainRecord(obj: unknown) {
   if (typeOf(obj) !== 'object') {
     throw new TypeError(`Not supported argument type - ${typeOf(obj)}`)
   }
@@ -17,5 +17,5 @@ export function toPlainStableJsonRecord(obj: unknown) {
     ]
   })
 
-  return stringify(Object.fromEntries(entries))
+  return Object.fromEntries(entries)
 }

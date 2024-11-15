@@ -51,9 +51,9 @@ test('Obj:get', () => {
   }, /Error in function Obj:get/)
 })
 
-test('Obj:toPlainStableJsonRecord', () => {
-  assert.equal(
-    funcs['Obj:toPlainStableJsonRecord']!({
+test('Obj:toPlainRecord', () => {
+  assert.deepEqual(
+    funcs['Obj:toPlainRecord']!({
       b: 1,
       a: 'foo',
       y: {
@@ -61,6 +61,6 @@ test('Obj:toPlainStableJsonRecord', () => {
         m: 'bar'
       }
     }),
-    '{"a":"foo","b":1,"y":"{\\"m\\":\\"bar\\",\\"z\\":123}"}'
+    { a: 'foo', b: 1, y: '{"m":"bar","z":123}' }
   )
 })

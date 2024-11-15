@@ -88,7 +88,7 @@ const functionsByName: Record<
   //#region Obj
   'Obj:get': [obj.get, {}],
   'Obj:fromEntries': [obj.fromEntries, {}],
-  'Obj:toPlainStableJsonRecord': [obj.toPlainStableJsonRecord, {}],
+  'Obj:toPlainRecord': [obj.toPlainRecord, {}],
   //#endregion
 
   //#region Date
@@ -121,7 +121,7 @@ const functionsByName: Record<
 
   //#region
   'JSON:toStr': [json.toStr, {}],
-  'JSON:toStableStr': [json.toStableStr, {}],
+  'JSON:Stable:toStr': [json.toStableStr, {}],
   'JSON:parse': [json.parse, {}],
   //#endregion
 
