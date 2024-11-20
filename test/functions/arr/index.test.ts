@@ -32,3 +32,19 @@ test('Arr:concat', () => {
   assert.ok(Array.isArray(emptyArr))
   assert.equal(emptyArr.length, 0)
 })
+
+test('Arr:includes', () => {
+  const includes = funcs['Arr:includes']
+
+  assert.ok(includes)
+  assert.deepEqual(includes([1, 2, 3], 2), true)
+  assert.deepEqual(includes([1, 2, 3], 42), false)
+})
+
+test('Arr:includesFromIndex', () => {
+  const includesFromIndex = funcs['Arr:includesFromIndex']
+
+  assert.ok(includesFromIndex)
+  assert.deepEqual(includesFromIndex([1, 2, 3], 1, 1), false)
+  assert.deepEqual(includesFromIndex([1, 2, 3], 1, 3), true)
+})

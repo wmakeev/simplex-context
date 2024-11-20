@@ -44,6 +44,8 @@ const functionsByName: Record<
   'Arr:coalesce': [arr.coalesce, {}],
   'Arr:concat': [arr.concat, {}],
   'Arr:filter': [arr.filter, {}],
+  'Arr:includes': [arr.includes, {}],
+  'Arr:includesFromIndex': [arr.includesFromIndex, {}],
   'Arr:join': [arr.join, {}],
   'Arr:map': [arr.map, {}],
   'Arr:reverse': [arr.reverse, {}],
