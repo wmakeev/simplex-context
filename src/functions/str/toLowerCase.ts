@@ -1,6 +1,4 @@
-import { typeOf } from '../common/typeOf.js'
-
 export function toLowerCase(val: unknown) {
-  if (typeOf(val) === 'string') return (val as string).toLowerCase()
+  if (typeof val === 'string') return val.toLowerCase()
   else return val
 }

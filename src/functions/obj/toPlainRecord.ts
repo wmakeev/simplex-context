@@ -2,7 +2,7 @@ import { typeOf } from '../common/typeOf.js'
 import { stringify } from 'safe-stable-stringify'
 
 export function toPlainRecord(obj: unknown) {
-  if (typeOf(obj) !== 'object') {
+  if (typeOf(obj) !== 'Object') {
     throw new TypeError(`Not supported argument type - ${typeOf(obj)}`)
   }
 

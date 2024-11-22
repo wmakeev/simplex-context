@@ -7,12 +7,12 @@ export function parseFloat(num: unknown) {
   const numType = typeOf(num)
 
   // number
-  if (numType === 'number') {
+  if (numType === 'Number') {
     return Math.floor(num as number)
   }
 
   // string
-  else if (numType === 'string') {
+  else if (numType === 'String') {
     const numMatch = (num as string)
       .replaceAll(UNICODE_SPACES_REGEX, '')
       .match(NUM_REGEX)

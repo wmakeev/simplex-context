@@ -7,9 +7,15 @@ export function toStr(obj: unknown) {
 
   if (
     objType == null ||
-    !['object', 'array', 'string', 'number', 'boolean', 'date'].includes(
-      objType
-    )
+    ![
+      'Object',
+      'Null',
+      'Array',
+      'String',
+      'Number',
+      'Boolean',
+      'Date'
+    ].includes(objType)
   ) {
     throw new TypeError(`Not supported argument type - ${objType}`)
   }

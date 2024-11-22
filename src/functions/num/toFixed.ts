@@ -5,12 +5,12 @@ export function toFixed(num: unknown, fractionDigits = 2) {
   const numType = typeOf(num)
 
   // number
-  if (numType === 'number') {
+  if (numType === 'Number') {
     return (num as number).toFixed(fractionDigits)
   }
 
   // string
-  else if (numType === 'string') {
+  else if (numType === 'String') {
     const parsed = Number.parseFloat(
       (num as string).replaceAll(',', '.').replaceAll(UNICODE_SPACES_REGEX, '')
     )

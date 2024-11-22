@@ -89,7 +89,7 @@ test('curried functions', async () => {
             if 'case' == "1" then
               (3, 0, "1", 6, 0, "foo", 8, 2)
                 | Arr:filter(_, notEqual(_, 0))
-                | Arr:filter(_, pipe(typeOf(_), notEqual(_, "string")))
+                | Arr:filter(_, pipe(typeOf(_), notEqual(_, "String")))
                 | Math:min
             else
               value()

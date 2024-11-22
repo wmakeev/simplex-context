@@ -18,7 +18,7 @@ export function parseISO(date: unknown): Date {
   }
 
   // number
-  else if (typeof date === 'number') {
+  else if (typeof date === 'number' && Number.isFinite(date)) {
     return new Date(date as number)
   }
 
