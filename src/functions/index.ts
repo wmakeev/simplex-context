@@ -106,6 +106,7 @@ const functionsByName: Record<
   'Date:getYear': [date.getYear, {}],
   'Date:ISO:parse': [date.parseISO, {}],
   'Date:ISO:tryParse': [date.tryParseISO, {}],
+  'Date:now': [date.now, {}],
   'Date:parse': [date.parse, {}],
   'Date:toJson': [date.toJson, {}],
   'Date:tryParse': [date.tryParse, {}],

@@ -40,3 +40,7 @@ export function getMilliseconds(date: unknown) {
 export function getTimestamp(date: unknown) {
   return parseISO(date).getTime()
 }
+
+export function now() {
+  return Date.now()
+}

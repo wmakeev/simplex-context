@@ -19,6 +19,7 @@ test('Date:*', () => {
   assert.equal(fn['Date:getSeconds']!(date), 33)
   assert.equal(fn['Date:getMilliseconds']!(date), 123)
   assert.equal(fn['Date:getTimestamp']!(date), 1704462753123)
+  assert.equal(typeof fn['Date:now']!(), 'number')
 
   assert.equal(fn['Date:format']!(date, 'yyyy-MM-dd'), '2024-01-05')
 
