@@ -58,6 +58,8 @@ const functionsByName: Record<
   'Str:extractNums': [str.extractNums, {}],
   'Str:includes': [str.includes, {}],
   'Str:length': [str.length, {}],
+  'Str:padEnd': [str.padEnd, {}],
+  'Str:padStart': [str.padStart, {}],
   'Str:replaceAll': [str.replaceAll, {}],
   'Str:split': [str.split, {}],
   'Str:startsWith': [str.startsWith, {}],

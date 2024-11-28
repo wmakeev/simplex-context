@@ -48,3 +48,11 @@ test('Str:substring', () => {
   assert.equal(fn['Str:substring']!('aBcdef', 2, 5), 'cde')
   assert.equal(fn['Str:substring']!('aBcdef', 2, -1), 'aB') // ?
 })
+
+test('Str:pad*', () => {
+  assert.equal(fn['Str:padStart']!(1, 3, '0'), '001')
+  assert.equal(fn['Str:padStart']!(1, 3), '  1')
+
+  assert.equal(fn['Str:padEnd']!(1, 3, '0'), '100')
+  assert.equal(fn['Str:padEnd']!('1', 3), '1  ')
+})
