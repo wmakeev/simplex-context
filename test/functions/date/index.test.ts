@@ -28,3 +28,22 @@ test('Date:*', () => {
     '2024-01-05T00:00:00.000Z'
   )
 })
+
+test('Date:* (without agruments)', () => {
+  assert.equal(fn['Date:getYear']!(), new Date().getFullYear())
+  assert.equal(fn['Date:getMonth']!(), new Date().getMonth() + 1)
+  assert.equal(fn['Date:getDate']!(), new Date().getDate())
+  assert.equal(fn['Date:getWeekDay']!(), new Date().getDay())
+  assert.equal(fn['Date:getHours']!(), new Date().getHours())
+  assert.equal(fn['Date:getMinutes']!(), new Date().getMinutes())
+  assert.ok(Math.abs(fn['Date:getSeconds']!() - new Date().getSeconds()) <= 1)
+  assert.ok(
+    Math.abs(fn['Date:getMilliseconds']!() - new Date().getMilliseconds()) <=
+      100
+  )
+  assert.ok(Math.abs(fn['Date:getTimestamp']!() - new Date().getTime()) <= 1000)
+
+  assert.throws(() => {
+    fn['Date:getYear']!(undefined)
+  })
+})

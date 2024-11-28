@@ -5,40 +5,52 @@ export * from './parse.js'
 export * from './parseISO.js'
 export * from './toJson.js'
 
-export function getYear(date: unknown) {
-  return parseISO(date).getFullYear()
+export function getYear(...args: any[]) {
+  return args.length === 0
+    ? new Date().getFullYear()
+    : parseISO(args[0]).getFullYear()
 }
 
-export function getMonth(date: unknown) {
-  return parseISO(date).getMonth() + 1
+export function getMonth(...args: any[]) {
+  return args.length === 0
+    ? new Date().getMonth() + 1
+    : parseISO(args[0]).getMonth() + 1
 }
 
-export function getDate(date: unknown) {
-  return parseISO(date).getDate()
+export function getDate(...args: any[]) {
+  return args.length === 0 ? new Date().getDate() : parseISO(args[0]).getDate()
 }
 
-export function getWeekDay(date: unknown) {
-  return parseISO(date).getDay()
+export function getWeekDay(...args: any[]) {
+  return args.length === 0 ? new Date().getDay() : parseISO(args[0]).getDay()
 }
 
-export function getHours(date: unknown) {
-  return parseISO(date).getHours()
+export function getHours(...args: any[]) {
+  return args.length === 0
+    ? new Date().getHours()
+    : parseISO(args[0]).getHours()
 }
 
-export function getMinutes(date: unknown) {
-  return parseISO(date).getMinutes()
+export function getMinutes(...args: any[]) {
+  return args.length === 0
+    ? new Date().getMinutes()
+    : parseISO(args[0]).getMinutes()
 }
 
-export function getSeconds(date: unknown) {
-  return parseISO(date).getSeconds()
+export function getSeconds(...args: any[]) {
+  return args.length === 0
+    ? new Date().getSeconds()
+    : parseISO(args[0]).getSeconds()
 }
 
-export function getMilliseconds(date: unknown) {
-  return parseISO(date).getMilliseconds()
+export function getMilliseconds(...args: any[]) {
+  return args.length === 0
+    ? new Date().getMilliseconds()
+    : parseISO(args[0]).getMilliseconds()
 }
 
-export function getTimestamp(date: unknown) {
-  return parseISO(date).getTime()
+export function getTimestamp(...args: any[]) {
+  return args.length === 0 ? new Date().getTime() : parseISO(args[0]).getTime()
 }
 
 export function now() {
