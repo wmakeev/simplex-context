@@ -11,5 +11,6 @@ export function format(date: unknown, format: unknown) {
     )
   }
 
+  // TODO Если дата число, то можно было бы и не переводить в JSON?
   return formatDate(parseISO(date).toJSON(), format)
 }
