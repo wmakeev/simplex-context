@@ -59,8 +59,9 @@ test('Obj:toPlainRecord', () => {
       y: {
         z: 123,
         m: 'bar'
-      }
+      },
+      n: null
     }),
-    { a: 'foo', b: 1, y: '{"m":"bar","z":123}' }
+    { a: 'foo', b: 1, n: 'null', y: '{"m":"bar","z":123}' }
   )
 })
