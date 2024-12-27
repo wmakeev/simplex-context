@@ -56,3 +56,23 @@ test('Str:pad*', () => {
   assert.equal(fn['Str:padEnd']!(1, 3, '0'), '100')
   assert.equal(fn['Str:padEnd']!('1', 3), '1  ')
 })
+
+test('Str:restrictLength', () => {
+  const restrictLength = fn['Str:restrictLength']
+  assert.ok(restrictLength)
+
+  assert.equal(
+    restrictLength('Hello world I am long string!', 1000),
+    'Hello world I am long string!'
+  )
+
+  assert.equal(
+    restrictLength('Hello world I am long string!', 10),
+    'Hello w...'
+  )
+
+  assert.equal(
+    restrictLength('Hello world I am long string!', 10, '*'),
+    'Hello wor*'
+  )
+})

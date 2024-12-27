@@ -61,6 +61,7 @@ const functionsByName: Record<
   'Str:padEnd': [str.padEnd, {}],
   'Str:padStart': [str.padStart, {}],
   'Str:replaceAll': [str.replaceAll, {}],
+  'Str:restrictLength': [str.restrictLength, {}],
   'Str:split': [str.split, {}],
   'Str:startsWith': [str.startsWith, {}],
   'Str:substring': [str.substring, {}],
