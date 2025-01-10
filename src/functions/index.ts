@@ -14,6 +14,7 @@ import * as state from './state/index.js'
 import * as str from './str/index.js'
 import * as table from './table/index.js'
 import * as tools from './tools/index.js'
+import * as html from './html/index.js'
 
 interface FunctionConfig {
   useState?: boolean
@@ -149,7 +150,22 @@ const functionsByName: Record<
   //#region RegEx
   'RegExp:match': [regex.match, {}],
   'RegExp:matchAll': [regex.matchAll, {}],
-  'RegExp:test': [regex.test, {}]
+  'RegExp:test': [regex.test, {}],
+  //#endregion
+
+  //#region Html
+  'Html:asText': [html.asText, {}],
+  'Html:find': [html.find, {}],
+  'Html:fromStr': [html.fromStr, {}],
+  'Html:next': [html.next, {}],
+  'Html:parent': [html.parent, {}],
+  'Html:prev': [html.prev, {}],
+  'Html:toArray': [html.toArray, {}],
+  'Html:toStr': [html.toStr, {}]
+  //#endregion
+
+  //#region
+  // ':': [, {}],
   //#endregion
 }
 
