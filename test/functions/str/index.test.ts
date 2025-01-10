@@ -5,6 +5,23 @@ import { getFunctions } from '../../../src/functions/index.js'
 
 const fn = getFunctions(createExpressionContextState())
 
+test('Str:from', () => {
+  const from = fn['Str:from']
+
+  assert.ok(from)
+
+  assert.equal(from('qwerty'), 'qwerty')
+  assert.equal(from(12345), '12345')
+  assert.equal(from(BigInt('123456')), '123456')
+  assert.equal(from(true), 'true')
+  assert.equal(from(new Date(2000, 0, 1)), '2000-01-01T00:00:00.000Z')
+  assert.equal(from({ foo: 'bar' }), '{}')
+  assert.equal(
+    from([1, 'foo', true, { foo: 'bar' }, ['boom', {}, 42]]),
+    '[1,foo,true,{},[boom,{},42]]'
+  )
+})
+
 test('Str:template', () => {
   assert.equal(
     fn['Str:template']!('Foo {0} Bar {1}', 'foo', 'bar'),

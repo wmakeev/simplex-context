@@ -1,5 +1,6 @@
 import { parseISO } from './parseISO.js'
 
+export * from './operations.js'
 export * from './format.js'
 export * from './parse.js'
 export * from './parseISO.js'

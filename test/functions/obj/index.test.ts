@@ -65,3 +65,15 @@ test('Obj:toPlainRecord', () => {
     { a: 'foo', b: 1, n: 'null', y: '{"m":"bar","z":123}' }
   )
 })
+
+test('Obj:assign', () => {
+  const assign = funcs['Obj:assign']
+  assert.ok(assign)
+
+  const obj = {}
+  const assigned = assign(obj)
+
+  assert.ok(obj !== assigned)
+
+  assert.deepEqual(assign({ foo: 'bar' }, { num: 42 }), { foo: 'bar', num: 42 })
+})

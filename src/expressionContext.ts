@@ -7,6 +7,7 @@ import {
 
 const expressionDefaultConstants = {
   _: CURRY_PLACEHOLDER,
+  EMPTY: null,
   TRUE: true,
   FALSE: false
 }

@@ -5,12 +5,25 @@ import { getFunctions } from '../../../src/functions/index.js'
 
 const funcs = getFunctions(createExpressionContextState())
 
-test('Arr:coalesce', () => {
-  const coalesce = funcs['Arr:coalesce']
+test('Arr:length', () => {
+  const length = funcs['Arr:length']
 
-  assert.ok(coalesce)
-  assert.equal(coalesce([null, undefined, '', 0, 2, null]), 0)
-  assert.equal(coalesce([null, undefined, '', false, 2, 42]), false)
+  assert.ok(length)
+  assert.equal(length([1, 2, 3]), 3)
+})
+
+test('Arr:slice', () => {
+  const slice = funcs['Arr:slice']
+
+  assert.ok(slice)
+
+  const arr = [1, 2, 3, 4, 5, 6]
+
+  const sliced = slice(arr)
+  assert.ok(arr !== sliced)
+
+  assert.deepEqual(slice(arr, 2), [3, 4, 5, 6])
+  assert.deepEqual(slice(arr, 2, 4), [3, 4])
 })
 
 test('Arr:concat', () => {

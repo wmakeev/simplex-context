@@ -48,8 +48,10 @@ const functionsByName: Record<
   'Arr:includes': [arr.includes, {}],
   'Arr:includesFromIndex': [arr.includesFromIndex, {}],
   'Arr:join': [arr.join, {}],
+  'Arr:length': [arr.length, {}],
   'Arr:map': [arr.map, {}],
   'Arr:reverse': [arr.reverse, {}],
+  'Arr:slice': [arr.slice, {}],
   'Arr:sort': [arr.sort, {}],
   'Arr:uniq': [arr.uniq, {}],
   //#endregion
@@ -57,6 +59,7 @@ const functionsByName: Record<
   //#region Str
   'Str:countLeftTabs': [str.countLeftTabs, {}],
   'Str:extractNums': [str.extractNums, {}],
+  'Str:from': [str.from, {}],
   'Str:includes': [str.includes, {}],
   'Str:length': [str.length, {}],
   'Str:padEnd': [str.padEnd, {}],
@@ -84,6 +87,9 @@ const functionsByName: Record<
 
   'Num:range': [num.range, {}],
   'Num:round': [num.round, {}],
+  'Num:floor': [num.floor, {}],
+  'Num:max': [math.max, {}],
+  'Num:min': [math.min, {}],
   //#endregion
 
   //#region Math
@@ -92,12 +98,15 @@ const functionsByName: Record<
   //#endregion
 
   //#region Obj
-  'Obj:get': [obj.get, {}],
+  'Obj:assign': [obj.assign, {}],
   'Obj:fromEntries': [obj.fromEntries, {}],
+  'Obj:get': [obj.get, {}],
   'Obj:toPlainRecord': [obj.toPlainRecord, {}],
   //#endregion
 
   //#region Date
+  'Date:addDays': [date.addDays, {}],
+  'Date:endOfDay': [date.endOfDay, {}],
   'Date:format': [date.format, {}],
   'Date:getDate': [date.getDate, {}],
   'Date:getHours': [date.getHours, {}],
@@ -112,7 +121,9 @@ const functionsByName: Record<
   'Date:ISO:tryParse': [date.tryParseISO, {}],
   'Date:now': [date.now, {}],
   'Date:parse': [date.parse, {}],
+  'Date:startOfDay': [date.startOfDay, {}],
   'Date:toJson': [date.toJson, {}],
+  'Date:toJSON': [date.toJson, {}],
   'Date:tryParse': [date.tryParse, {}],
   //#endregion
 
