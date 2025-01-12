@@ -8,6 +8,7 @@ import {
 const expressionDefaultConstants = {
   _: CURRY_PLACEHOLDER,
   EMPTY: null,
+  NEW_LINE: '\n',
   TRUE: true,
   FALSE: false
 }
